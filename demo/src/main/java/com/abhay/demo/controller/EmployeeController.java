@@ -1,5 +1,6 @@
 package com.abhay.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,13 @@ public class EmployeeController {
 	
 	@Autowired
 	EmployeeRepository employeeRepository;
+	
+	@GetMapping("/test")
+	public List<String> testEmployeeController() {
+		List<String> successList = new ArrayList<String>(); 
+		successList.add("SUCCESS");
+		return successList;
+	}
 	
 	@GetMapping("/all")
 	public List<Employee> getAllEmployees() {		
